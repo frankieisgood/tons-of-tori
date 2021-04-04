@@ -1,3 +1,6 @@
+import * as THREE from '/build/three.module.js';
+import { OrbitControls } from '/jsm/controls/OrbitControls.js';
+
 var scene = new THREE.Scene();
 
 const fov = 45;
@@ -12,6 +15,8 @@ renderer.setClearColor("#000000");
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
+const controls = new OrbitControls(camera, renderer.domElement);
+
 var geometry = new THREE.TorusGeometry( 10, 3, 16, 100 );
 var material = new THREE.MeshBasicMaterial( { color: "#ff006e", transparent: true, opacity: ".8" } );
 var torus = new THREE.Mesh( geometry, material );
@@ -24,10 +29,15 @@ scene.add(light.target);
 
 scene.add( torus );
 
-var render = function () {
-  requestAnimationFrame( render );
+var animate = function () {
+  requestAnimationFrame( animate );
   torus.rotation.x += 0.01;
+  controls.update();
+  render();
+}
+
+var render = function () {
   renderer.render(scene, camera);
 };
 
-render();
+animate();  

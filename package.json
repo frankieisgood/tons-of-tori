@@ -1,0 +1,25 @@
+{
+  "name": "tons-of-tori",
+  "version": "1.0.0",
+  "description": "## About",
+  "main": "script.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frankieisgood/tons-of-tori.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frankieisgood/tons-of-tori/issues"
+  },
+  "homepage": "https://github.com/frankieisgood/tons-of-tori#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "three": "^0.127.0"
+  }
+}
